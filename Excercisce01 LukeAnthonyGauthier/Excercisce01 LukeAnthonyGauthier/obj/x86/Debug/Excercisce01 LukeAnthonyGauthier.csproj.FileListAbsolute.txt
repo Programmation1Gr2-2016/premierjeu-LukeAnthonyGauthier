@@ -25,3 +25,38 @@ c:\users\lukea\documents\visual studio 2015\Projects\Excercisce01 LukeAnthonyGau
 c:\users\lukea\documents\visual studio 2015\Projects\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\obj\x86\Debug\Excercisce01 LukeAnthonyGauthier.pdb
 C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\obj\x86\Debug\Excercisce01 LukeAnthonyGauthier.exe
 C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\obj\x86\Debug\Excercisce01 LukeAnthonyGauthier.pdb
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\Excercisce01 LukeAnthonyGauthier.exe
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\Excercisce01 LukeAnthonyGauthier.pdb
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\SharpDX.RawInput.dll
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\SharpDX.RawInput.xml
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\obj\x86\Debug\Excercisce01 LukeAnthonyGauthier.csprojResolveAssemblyReference.cache
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\Content\background.png
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\Content\01.png
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\Content\Boss.png
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\Content\Projectille.png
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\Content\Sounds\maintrac.wma
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\Content\Sounds\maintrac.xnb
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\Content\02.png
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\Content\profectille01.png
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\Content\Sounds\BulletSong.xnb
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\Content\Sounds\Gameover.wma
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\Content\Sounds\Gameover.xnb
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\Content\Sounds\Rire.xnb
