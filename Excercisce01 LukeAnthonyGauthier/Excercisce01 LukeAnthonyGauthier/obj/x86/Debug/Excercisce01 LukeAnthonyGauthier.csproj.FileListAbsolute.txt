@@ -48,7 +48,6 @@ C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauth
 C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\SharpDX.RawInput.xml
 C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
 C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\obj\x86\Debug\Excercisce01 LukeAnthonyGauthier.csprojResolveAssemblyReference.cache
-C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\Content\background.png
 C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\Content\01.png
 C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\Content\Boss.png
 C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\Content\Projectille.png
@@ -59,3 +58,5 @@ C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauth
 C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\Content\Sounds\Gameover.xnb
 C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\Content\Sounds\Roboto.xnb
 C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\Content\Font.xnb
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\Content\backgrounds\background.png
+C:\Users\lukea\Documents\Visual Studio 2015\Projects\premierjeu-LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier\bin\Windows\x86\Debug\Content\backgrounds\background1..png

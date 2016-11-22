@@ -16,4 +16,5 @@ namespace Excercisce01_LukeAnthonyGauthier
         public Texture2D sprite;
         public bool estVivant;
     }
+    
 }

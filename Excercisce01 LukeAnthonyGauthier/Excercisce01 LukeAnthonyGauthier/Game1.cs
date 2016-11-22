@@ -3,6 +3,9 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Media;
+using System.Linq;
+using System.Text;
+using System.Collections.Generic;
 using System;
 
 namespace Excercisce01_LukeAnthonyGauthier
@@ -14,18 +17,20 @@ namespace Excercisce01_LukeAnthonyGauthier
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Scrolling scrolling1;
+        Scrolling scrolling2;
         Rectangle fenetre;
         GameObject heros;
         GameObject ennemie;
-        GameObject[] tabBullet = new GameObject[40];
-        Random Rnd = new Random();
-        Texture2D background;    
+        GameObject[] tabBullet = new GameObject[100];
+        Random Rnd = new Random();  
         SoundEffect gameover;
         SoundEffectInstance gameovers;
         SpriteFont font;
 
         bool amorceur = false;
         int compteur = 0;
+        string texte = "";
 
 
         public Game1()
@@ -45,7 +50,9 @@ namespace Excercisce01_LukeAnthonyGauthier
             // TODO: Add your initialization logic here
             this.graphics.PreferredBackBufferWidth = graphics.GraphicsDevice.DisplayMode.Width;
             this.graphics.PreferredBackBufferHeight = graphics.GraphicsDevice.DisplayMode.Height;
-            this.graphics.ToggleFullScreen();
+            this.graphics.ApplyChanges();
+            this.Window.Position = new Point(0, 0);
+
             base.Initialize();
         }
 
@@ -63,7 +70,8 @@ namespace Excercisce01_LukeAnthonyGauthier
             fenetre.Width = graphics.GraphicsDevice.DisplayMode.Width;
             fenetre.Height = graphics.GraphicsDevice.DisplayMode.Height;
 
-            background= Content.Load<Texture2D>("Background.png");
+            scrolling1= new Scrolling (Content.Load<Texture2D>("backgrounds/background"), new Rectangle(0,0,2000,1200));
+            scrolling2 = new Scrolling(Content.Load<Texture2D>("backgrounds/background1."), new Rectangle(2000, 0, 2000, 1200));
 
             gameover = Content.Load<SoundEffect>("Sounds\\GameOver");
             gameovers = gameover.CreateInstance();
@@ -92,7 +100,7 @@ namespace Excercisce01_LukeAnthonyGauthier
             ennemie.position.Y = 450;
 
 
-            for (int i = 0; i < 40; i++)
+            for (int i = 0; i <tabBullet.GetLength(0); i++)
             {
                 tabBullet[i] = new GameObject();
                 tabBullet[i].estVivant = false;
@@ -150,6 +158,16 @@ namespace Excercisce01_LukeAnthonyGauthier
             UpdateCollision();
             Updatebullet(gameTime);
 
+            // background move 
+            if (scrolling1.rectangle.X + scrolling1.texture.Width <= 0)           
+                scrolling1.rectangle.X = scrolling2.rectangle.X + scrolling2.texture.Width;
+            if (scrolling2.rectangle.X + scrolling2.texture.Width <= 0)
+                scrolling2.rectangle.X = scrolling1.rectangle.X + scrolling1.texture.Width;
+            
+            scrolling1.Update();
+            scrolling2.Update();
+          
+
             base.Update(gameTime);
         }
 
@@ -157,11 +175,11 @@ namespace Excercisce01_LukeAnthonyGauthier
         {
             if (heros.position.X < fenetre.Left)
             {
-                heros.position.X = fenetre.Right - heros.sprite.Width;
+                heros.position.X = fenetre.Left;
             }
             else if (heros.position.X + heros.sprite.Width > fenetre.Right)
             {
-                heros.position.X = fenetre.Left;
+                heros.position.X = fenetre.Right - heros.sprite.Width;
             }
             else if (heros.position.Y + heros.sprite.Height > fenetre.Bottom)
             {
@@ -171,7 +189,7 @@ namespace Excercisce01_LukeAnthonyGauthier
             {
                 heros.position.Y = fenetre.Bottom - heros.sprite.Height;
             }
-            for (int i = 0; i < 40; i++)
+            for (int i = 0; i < tabBullet.GetLength(0); i++)
             {
                 if (heros.position.Intersects(tabBullet[i].sprite.Bounds))
                 {
@@ -197,7 +215,7 @@ namespace Excercisce01_LukeAnthonyGauthier
         {
             if (ennemie.estVivant == true)
             {
-                for (int i = 0; i < 40; i++)
+                for (int i = 0; i < tabBullet.GetLength(0); i++)
                 {
                     tabBullet[i].position.X += (tabBullet[i].vitesse);
 
@@ -214,7 +232,7 @@ namespace Excercisce01_LukeAnthonyGauthier
                         }
                     }                    
                 }
-                for (int i = 0; i < 40; i++)
+                for (int i = 0; i < tabBullet.GetLength(0); i++)
                 {
 
                     if ((Rnd.Next(1, 1000) == 1) && (tabBullet[i].estVivant == false))
@@ -222,13 +240,13 @@ namespace Excercisce01_LukeAnthonyGauthier
                         tabBullet[i].estVivant = true;
                         tabBullet[i].position.X = ennemie.position.X;
                         tabBullet[i].position.Y = ennemie.position.Y;
-                        tabBullet[i].vitesse = Rnd.Next(-6, -2);
+                        tabBullet[i].vitesse = Rnd.Next(-7, -2);
                     }
                 }
             }
             else
             {
-                for (int i = 0; i < 40; i++)
+                for (int i = 0; i < tabBullet.GetLength(0); i++)
                 {
                     tabBullet[i].estVivant = false;
                 }
@@ -237,7 +255,7 @@ namespace Excercisce01_LukeAnthonyGauthier
         protected void UpdateCollision()
         { 
             
-            for (int i = 0; i < 40; i++)
+            for (int i = 0; i < tabBullet.GetLength(0); i++)
             {
                 if (tabBullet[i].estVivant == true && heros.estVivant == true)
                 {
@@ -262,6 +280,7 @@ namespace Excercisce01_LukeAnthonyGauthier
             }
         }
       
+
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
@@ -274,36 +293,38 @@ namespace Excercisce01_LukeAnthonyGauthier
 
             spriteBatch.Begin();
 
-            spriteBatch.Draw(background,fenetre, Color.White);
-
             
-
+            scrolling1.Draw(spriteBatch);
+            scrolling2.Draw(spriteBatch);
+           
             if (heros.estVivant == true)
             {
                 spriteBatch.Draw(heros.sprite, heros.position, Color.White);
             }
             else
             {
-              spriteBatch.DrawString(font, "Game OVER!", new Vector2(1000, 500), Color.Black);
+                texte = "Game Over!";
+                spriteBatch.DrawString(font, texte, new Vector2((fenetre.Width / 2 - font.MeasureString(texte).X), (fenetre.Height / 2 - font.MeasureString(texte).Y)), Color.White);
             }
             if (ennemie.estVivant == true)
             {
                 spriteBatch.Draw(ennemie.sprite, ennemie.position, Color.White);
             }
-            
+
             else
             {
-                spriteBatch.DrawString(font, "You WIN!", new Vector2(1000, 500), Color.Black);
+                texte = "You WIN!";
+                spriteBatch.DrawString(font, texte, new Vector2((fenetre.Width / 2 - font.MeasureString(texte).X), (fenetre.Height / 2 - font.MeasureString(texte).Y)), Color.White);
             }
-            for (int i = 0; i < 40; i++)
+            for (int i = 0; i < tabBullet.GetLength(0); i++)
             {
                 if (tabBullet[i].estVivant == true)
-                {                   
+                {
                     spriteBatch.Draw(tabBullet[i].sprite, tabBullet[i].position, Color.White);
                 }
             }
 
-            spriteBatch.End();
+                spriteBatch.End();
 
 
             base.Draw(gameTime);
