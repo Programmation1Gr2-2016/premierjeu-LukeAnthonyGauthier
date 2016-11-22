@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/lukea/Documents/Visual Studio 2015/Projects/premierjeu-LukeAnthonyGauthier/Excercisce01 LukeAnthonyGauthier/Excercisce01 LukeAnthonyGauthier/Content/Sounds/maintrac.mp3</SourceFile>
-  <SourceTime>2016-11-16T16:11:38.4182097-05:00</SourceTime>
+  <SourceTime>2016-11-16T18:59:25.7258772-05:00</SourceTime>
   <DestFile>C:/Users/lukea/Documents/Visual Studio 2015/Projects/premierjeu-LukeAnthonyGauthier/Excercisce01 LukeAnthonyGauthier/Excercisce01 LukeAnthonyGauthier/Content/bin/Windows/Sounds/maintrac.xnb</DestFile>
-  <DestTime>2016-11-16T16:18:08.9850509-05:00</DestTime>
+  <DestTime>2016-11-16T19:01:59.9292896-05:00</DestTime>
   <Importer>Mp3Importer</Importer>
   <ImporterTime>2016-03-30T02:36:08-04:00</ImporterTime>
   <Processor>SongProcessor</Processor>

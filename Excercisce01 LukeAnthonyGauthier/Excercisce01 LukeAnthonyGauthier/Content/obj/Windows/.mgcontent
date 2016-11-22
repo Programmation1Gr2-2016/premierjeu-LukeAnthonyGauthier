@@ -4,9 +4,8 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/lukea/Documents/Visual Studio 2015/Projects/premierjeu-LukeAnthonyGauthier/Excercisce01 LukeAnthonyGauthier/Excercisce01 LukeAnthonyGauthier/Content/Sounds/BulletSong.wav</File>
-    <File>C:/Users/lukea/Documents/Visual Studio 2015/Projects/premierjeu-LukeAnthonyGauthier/Excercisce01 LukeAnthonyGauthier/Excercisce01 LukeAnthonyGauthier/Content/Sounds/Gameover.mp3</File>
     <File>C:/Users/lukea/Documents/Visual Studio 2015/Projects/premierjeu-LukeAnthonyGauthier/Excercisce01 LukeAnthonyGauthier/Excercisce01 LukeAnthonyGauthier/Content/Sounds/maintrac.mp3</File>
-    <File>C:/Users/lukea/Documents/Visual Studio 2015/Projects/premierjeu-LukeAnthonyGauthier/Excercisce01 LukeAnthonyGauthier/Excercisce01 LukeAnthonyGauthier/Content/Sounds/Rire.wav</File>
+    <File>C:/Users/lukea/Documents/Visual Studio 2015/Projects/premierjeu-LukeAnthonyGauthier/Excercisce01 LukeAnthonyGauthier/Excercisce01 LukeAnthonyGauthier/Content/Sounds/GameOver.wav</File>
+    <File>C:/Users/lukea/Documents/Visual Studio 2015/Projects/premierjeu-LukeAnthonyGauthier/Excercisce01 LukeAnthonyGauthier/Excercisce01 LukeAnthonyGauthier/Content/Sounds/Roboto.spritefont</File>
   </SourceFiles>
 </SourceFileCollection>

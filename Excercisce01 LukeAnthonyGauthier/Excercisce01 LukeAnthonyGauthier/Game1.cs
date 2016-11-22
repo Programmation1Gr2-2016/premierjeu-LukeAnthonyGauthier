@@ -19,11 +19,10 @@ namespace Excercisce01_LukeAnthonyGauthier
         GameObject ennemie;
         GameObject[] tabBullet = new GameObject[40];
         Random Rnd = new Random();
-        Texture2D background;
-        SoundEffect bulletSong ;
-        SoundEffectInstance bulletSongs;
+        Texture2D background;    
         SoundEffect gameover;
         SoundEffectInstance gameovers;
+        SpriteFont font;
 
         bool amorceur = false;
         int compteur = 0;
@@ -46,7 +45,7 @@ namespace Excercisce01_LukeAnthonyGauthier
             // TODO: Add your initialization logic here
             this.graphics.PreferredBackBufferWidth = graphics.GraphicsDevice.DisplayMode.Width;
             this.graphics.PreferredBackBufferHeight = graphics.GraphicsDevice.DisplayMode.Height;
-            this.graphics.ApplyChanges();
+            this.graphics.ToggleFullScreen();
             base.Initialize();
         }
 
@@ -66,18 +65,15 @@ namespace Excercisce01_LukeAnthonyGauthier
 
             background= Content.Load<Texture2D>("Background.png");
 
-            bulletSong = Content.Load<SoundEffect>("Sounds\\BulletSong");
-            bulletSongs = bulletSong.CreateInstance();
+            gameover = Content.Load<SoundEffect>("Sounds\\GameOver");
+            gameovers = gameover.CreateInstance();
 
-            Song gameover = Content.Load<Song>("Sounds\\Gameover");
-            gameovers = bulletSong.CreateInstance();
+            font = Content.Load<SpriteFont>("font");
+
 
             Song song = Content.Load<Song>("Sounds\\maintrac");
             MediaPlayer.IsRepeating = true;
             MediaPlayer.Play(song);
-            
-            
-
 
             heros = new GameObject();
             heros.estVivant = true;
@@ -251,7 +247,7 @@ namespace Excercisce01_LukeAnthonyGauthier
                         amorceur = true;
                         if (amorceur== true)
                         {
-                            bulletSong.Play();
+                            gameovers.Play();
                             amorceur = false;
                         }                          
                     }
@@ -265,16 +261,7 @@ namespace Excercisce01_LukeAnthonyGauthier
                 }
             }
         }
-        protected void UpdateMusic()
-        {
-            if (heros.estVivant == false)
-            {
-                gameovers.Play();
-            }
-        }
-
-
-
+      
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
@@ -295,9 +282,18 @@ namespace Excercisce01_LukeAnthonyGauthier
             {
                 spriteBatch.Draw(heros.sprite, heros.position, Color.White);
             }
+            else
+            {
+              spriteBatch.DrawString(font, "Game OVER!", new Vector2(1000, 500), Color.Black);
+            }
             if (ennemie.estVivant == true)
             {
                 spriteBatch.Draw(ennemie.sprite, ennemie.position, Color.White);
+            }
+            
+            else
+            {
+                spriteBatch.DrawString(font, "You WIN!", new Vector2(1000, 500), Color.Black);
             }
             for (int i = 0; i < 40; i++)
             {
