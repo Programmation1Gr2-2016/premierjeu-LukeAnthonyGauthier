@@ -15,12 +15,14 @@ namespace Excercisce01_LukeAnthonyGauthier
     /// </summary>
     public class Game1 : Game
     {
+        KeyboardState keys = new KeyboardState();
+        KeyboardState previousKeys = new KeyboardState();
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Scrolling scrolling1;
         Scrolling scrolling2;
         Rectangle fenetre;
-        GameObject heros;
+        GameObjectAnim heros;
         GameObject ennemie;
         GameObject[] tabBullet = new GameObject[100];
         Random Rnd = new Random();  
@@ -29,8 +31,12 @@ namespace Excercisce01_LukeAnthonyGauthier
         SpriteFont font;
 
         bool amorceur = false;
+        bool amorceur1 = false;
         int compteur = 0;
         string texte = "";
+        string time = "";
+
+
 
 
         public Game1()
@@ -83,13 +89,15 @@ namespace Excercisce01_LukeAnthonyGauthier
             MediaPlayer.IsRepeating = true;
             MediaPlayer.Play(song);
 
-            heros = new GameObject();
+            heros= new GameObjectAnim();
             heros.estVivant = true;
-            heros.vitesse = 5;
-            heros.sprite = Content.Load<Texture2D>("01.png");
-            heros.position = heros.sprite.Bounds;
-            heros.position.X = 50;
-            heros.position.Y = 50;
+            heros.direction = Vector2.Zero;
+            heros.vitesse.X = 2;
+            heros.vitesse.Y = 2;
+            heros.objetState = GameObjectAnim.etats.attenteDroite;
+            heros.position = new Rectangle(544, 0, 46, 84);   //Position initiale de heroes
+            heros.sprite = Content.Load<Texture2D>("heroe.png");
+
 
             ennemie = new GameObject();
             ennemie.estVivant = true;
@@ -133,69 +141,93 @@ namespace Excercisce01_LukeAnthonyGauthier
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
-
-            //Hero mouvemant 
-            if (Keyboard.GetState().IsKeyDown(Keys.D))
-            {
-                heros.position.X += heros.vitesse;
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.A))
-            {
-                heros.position.X -= heros.vitesse;
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.W))
-            {
-                heros.position.Y -= heros.vitesse;
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.S))
-            {
-                heros.position.Y += heros.vitesse;
-            }
-
-            UpdateHeros();
-            UpdateEnnemi();
-            UpdateCollision();
-            Updatebullet(gameTime);
+            // TODO: Add your update logic here           
 
             // background move 
-            if (scrolling1.rectangle.X + scrolling1.texture.Width <= 0)           
+            if (scrolling1.rectangle.X + scrolling1.texture.Width <= 0)
+            {
                 scrolling1.rectangle.X = scrolling2.rectangle.X + scrolling2.texture.Width;
+            }
             if (scrolling2.rectangle.X + scrolling2.texture.Width <= 0)
+            {
                 scrolling2.rectangle.X = scrolling1.rectangle.X + scrolling1.texture.Width;
-            
+            }
             scrolling1.Update();
             scrolling2.Update();
-          
+            Updatebullet(gameTime);
+            UpdateEnnemi();
+            UpdateHeros(gameTime);
+            UpdateCollision();           
 
             base.Update(gameTime);
         }
 
-        protected void UpdateHeros()
+        protected void UpdateHeros(GameTime gameTime)
         {
+            keys = Keyboard.GetState();
+            heros.position.X += (int)(heros.vitesse.X * heros.direction.X);
+            heros.position.Y += (int)(heros.vitesse.Y * heros.direction.Y);
+            //Movement
+            if (keys.IsKeyDown(Keys.Right))
+            {
+                heros.direction.X = 2;
+                heros.objetState = GameObjectAnim.etats.runDroite;
+            }
+            if (keys.IsKeyUp(Keys.Right) && previousKeys.IsKeyDown(Keys.Right))
+            {
+                heros.direction.X = 0;
+                heros.objetState = GameObjectAnim.etats.attenteDroite;
+            }
+            if (keys.IsKeyDown(Keys.Left))
+            {
+                heros.direction.X = -2;
+                heros.objetState = GameObjectAnim.etats.runGauche;
+            }
+            if (keys.IsKeyUp(Keys.Left) && previousKeys.IsKeyDown(Keys.Left))
+            {
+                heros.direction.X = 0;
+                heros.objetState = GameObjectAnim.etats.attenteGauche;
+            }
+            if (keys.IsKeyDown(Keys.Up))
+            {
+                heros.direction.Y = -2;
+                heros.objetState = GameObjectAnim.etats.runHaut;
+            }
+            if (keys.IsKeyUp(Keys.Up) && previousKeys.IsKeyDown(Keys.Up))
+            {
+                heros.direction.Y = 0;
+                heros.objetState = GameObjectAnim.etats.attenteHaut;
+            }
+            if (keys.IsKeyDown(Keys.Down))
+            {
+                heros.direction.Y = 2;
+                heros.objetState = GameObjectAnim.etats.runBas;
+            }
+            if (keys.IsKeyUp(Keys.Down) && previousKeys.IsKeyDown(Keys.Down))
+            {
+                heros.direction.Y = 0;
+                heros.objetState = GameObjectAnim.etats.attenteBas;
+            }
+            //dextion de coter
             if (heros.position.X < fenetre.Left)
             {
                 heros.position.X = fenetre.Left;
             }
-            else if (heros.position.X + heros.sprite.Width > fenetre.Right)
+            else if (heros.position.X + heros.spriteAfficher.Width > fenetre.Width)
             {
-                heros.position.X = fenetre.Right - heros.sprite.Width;
+                heros.position.X = fenetre.Right - heros.spriteAfficher.Width;
             }
-            else if (heros.position.Y + heros.sprite.Height > fenetre.Bottom)
+            else if (heros.position.Y + heros.spriteAfficher.Height > fenetre.Bottom)
             {
                 heros.position.Y = fenetre.Top;
             }
             else if (heros.position.Y < fenetre.Top)
             {
-                heros.position.Y = fenetre.Bottom - heros.sprite.Height;
+                heros.position.Y = fenetre.Bottom - heros.spriteAfficher.Height;
             }
-            for (int i = 0; i < tabBullet.GetLength(0); i++)
-            {
-                if (heros.position.Intersects(tabBullet[i].sprite.Bounds))
-                {
-                    heros.estVivant = false;
-                }
-            }
+
+            heros.Update(gameTime);
+            previousKeys = keys;
 
         }
         protected void UpdateEnnemi()
@@ -215,34 +247,52 @@ namespace Excercisce01_LukeAnthonyGauthier
         {
             if (ennemie.estVivant == true)
             {
+                
                 for (int i = 0; i < tabBullet.GetLength(0); i++)
                 {
-                    tabBullet[i].position.X += (tabBullet[i].vitesse);
+                 
 
-                    if (tabBullet[i].position.X < fenetre.Left && compteur!=3)
+                    tabBullet[i].position.X += tabBullet[i].vitesse;
+
+                    if ((tabBullet[i].position.X < fenetre.Left) && (compteur!=3)&&(tabBullet[i].estVivant==true))
                     {                    
                         tabBullet[i].estVivant = false;
                         compteur++;
+                        //MegaPOULPE
                         if (compteur == 3)
                         {
-                            tabBullet[i].position.X = tabBullet[i].vitesse*-1;
-                            //tabBullet[i].position.Height *= 2;
-                            //tabBullet[i].position.Width *= 2;
+                            tabBullet[i].estVivant = true;
+                            tabBullet[i].vitesse = 2 ;
+                            tabBullet[i].position.Height *= 2;
+                            tabBullet[i].position.Width *= 2;                                          
                             compteur = 0;
                         }
-                    }                    
+                    }
+                    if (tabBullet[i].position.X + tabBullet[i].sprite.Width > fenetre.Right)
+                    {
+                        tabBullet[i].estVivant = false;
+                        amorceur1 = true;
+                        if (amorceur1 == true)
+                        {
+                            tabBullet[i].position.Height = tabBullet[i].position.Height/2;
+                            tabBullet[i].position.Width = tabBullet[i].position.Width/2;
+                            amorceur1 = false;
+                        }
+                    }
+                   
                 }
                 for (int i = 0; i < tabBullet.GetLength(0); i++)
                 {
-
                     if ((Rnd.Next(1, 1000) == 1) && (tabBullet[i].estVivant == false))
                     {
                         tabBullet[i].estVivant = true;
                         tabBullet[i].position.X = ennemie.position.X;
                         tabBullet[i].position.Y = ennemie.position.Y;
                         tabBullet[i].vitesse = Rnd.Next(-7, -2);
+
                     }
                 }
+                                              
             }
             else
             {
@@ -265,6 +315,7 @@ namespace Excercisce01_LukeAnthonyGauthier
                         amorceur = true;
                         if (amorceur== true)
                         {
+                            MediaPlayer.Volume = 0.25F;
                             gameovers.Play();
                             amorceur = false;
                         }                          
@@ -279,7 +330,8 @@ namespace Excercisce01_LukeAnthonyGauthier
                 }
             }
         }
-      
+       
+
 
         /// <summary>
         /// This is called when the game should draw itself.
@@ -296,15 +348,22 @@ namespace Excercisce01_LukeAnthonyGauthier
             
             scrolling1.Draw(spriteBatch);
             scrolling2.Draw(spriteBatch);
-           
+
             if (heros.estVivant == true)
             {
-                spriteBatch.Draw(heros.sprite, heros.position, Color.White);
+                spriteBatch.Draw(heros.sprite, heros.position, heros.spriteAfficher, Color.White);
+
             }
             else
             {
-                texte = "Game Over!";
-                spriteBatch.DrawString(font, texte, new Vector2((fenetre.Width / 2 - font.MeasureString(texte).X), (fenetre.Height / 2 - font.MeasureString(texte).Y)), Color.White);
+                
+                if (amorceur == false)
+                {
+                    texte = "--- Game Over! ---\n  Survive: " + gameTime.TotalGameTime.Seconds + " Sec";
+                    amorceur = true;
+                }
+
+                spriteBatch.DrawString(font, texte, new Vector2((fenetre.Width/2 - font.MeasureString(texte).X)+180, (fenetre.Height / 3 - font.MeasureString(texte).Y)), Color.White);
             }
             if (ennemie.estVivant == true)
             {
@@ -331,3 +390,4 @@ namespace Excercisce01_LukeAnthonyGauthier
         }
     }
 }
+// finir sprite en haut 

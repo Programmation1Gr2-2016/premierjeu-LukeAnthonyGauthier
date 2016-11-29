@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excercisce01 LukeAnthonyGauthier", "Excercisce01 LukeAnthonyGauthier\Excercisce01 LukeAnthonyGauthier.csproj", "{0BB2A15B-6013-4DB9-AC67-981356242374}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSprite", "TestSprite\TestSprite.csproj", "{C69EBC19-F234-4B00-9241-165DE275660D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -15,6 +17,10 @@ Global
 		{0BB2A15B-6013-4DB9-AC67-981356242374}.Debug|x86.Build.0 = Debug|x86
 		{0BB2A15B-6013-4DB9-AC67-981356242374}.Release|x86.ActiveCfg = Release|x86
 		{0BB2A15B-6013-4DB9-AC67-981356242374}.Release|x86.Build.0 = Release|x86
+		{C69EBC19-F234-4B00-9241-165DE275660D}.Debug|x86.ActiveCfg = Debug|x86
+		{C69EBC19-F234-4B00-9241-165DE275660D}.Debug|x86.Build.0 = Debug|x86
+		{C69EBC19-F234-4B00-9241-165DE275660D}.Release|x86.ActiveCfg = Release|x86
+		{C69EBC19-F234-4B00-9241-165DE275660D}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
